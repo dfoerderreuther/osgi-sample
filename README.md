@@ -1,5 +1,5 @@
 # osgi-sample
-Simple OSGi-Sample with two modules, one service and one web client
+Simple annotation-based OSGi-sample with two modules (one service and one web client)
 
 Run with apache felix and
 
