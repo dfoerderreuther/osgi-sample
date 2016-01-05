@@ -1,7 +1,6 @@
 package de.eleon.test.osgi.webclient.impl;
 
 import de.eleon.test.osgi.dateserver.DateServer;
-import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
@@ -27,7 +26,7 @@ public class WebClient extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("Hello World, this is my OSGi-Servlet Web Client\n");
+        resp.getWriter().write("Hello world!\n");
         resp.getWriter().write("current date: " + dateServer.currentDate() + "\n");
         resp.getWriter().write("server start date: " + dateServer.startDate() + "\n");
         resp.getWriter().write("uptime: " + dateServer.uptime() + "\n");

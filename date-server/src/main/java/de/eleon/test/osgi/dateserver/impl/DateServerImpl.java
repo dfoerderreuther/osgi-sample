@@ -2,14 +2,13 @@ package de.eleon.test.osgi.dateserver.impl;
 
 import de.eleon.test.osgi.dateserver.DateServer;
 import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
 import org.joda.time.Period;
-import org.joda.time.format.*;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.PeriodFormatter;
+import org.joda.time.format.PeriodFormatterBuilder;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
-
-import java.util.Date;
 
 @Component
 public class DateServerImpl implements DateServer {
@@ -38,6 +37,8 @@ public class DateServerImpl implements DateServer {
         PeriodFormatter minutesAndSeconds = new PeriodFormatterBuilder()
                 .printZeroAlways()
                 .appendDays()
+                .appendSeparator(":")
+                .appendHours()
                 .appendSeparator(":")
                 .appendMinutes()
                 .appendSeparator(":")
